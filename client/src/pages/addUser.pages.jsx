@@ -18,7 +18,7 @@ export default function AddUserPage() {
 	};
 	return (
 		<PageStyled>
-			<div className='header'>Add User</div>
+			<div className='header'>Add Account</div>
 			<form
 				// action=''
                 // onSubmit={addUserHandler}
