@@ -1,6 +1,6 @@
 import React from 'react';
 import { addUser } from '../api/users';
-import PageStyled from './pagesStyled/style';
+import {PageStyled} from './pagesStyled/style';
 
 
 export default function AddUserPage() {

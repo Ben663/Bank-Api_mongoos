@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import PageStyled from './pagesStyled/style';
+import {PageStyled} from './pagesStyled/style';
 import { getUserById, deleteUser } from '../api/users';
-import { UserCard, SearchForm } from '../componnents/userCard';
+import { UserCard } from '../componnents/userCard';
+import {SearchForm} from '../componnents/searchForm'
 
 
 export default function SearchUser() {

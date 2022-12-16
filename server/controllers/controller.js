@@ -1,9 +1,9 @@
 import { bankUsers } from '../model/model.js';
-import { objectId, validateObjectId, validateNumber } from './utils.js'
+import { validateObjectId, validateNumber } from './utils.js'
 
 export const getUsers = async (req, res) => {
 	try {
-		res.send('im in')
+		// res.send('im in')
 		const allBankUsers = await bankUsers.find();
 		res.status(200).send({ users: allBankUsers });
 	} catch (error) {

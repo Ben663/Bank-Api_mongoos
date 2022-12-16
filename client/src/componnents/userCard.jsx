@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserCard({ user }) {
+export function UserCard({ user }) {
     const { _id, cash, credit } = user;
     return (
         <div>

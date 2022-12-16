@@ -1,15 +1,15 @@
 // import logo from './logo.svg';
 import { useState, useEffect } from 'react';
 import { usersApi } from './api/connecting';
-import { Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './componnents/navbar';
+import { Routes, Route } from 'react-router-dom';
+import Navbar  from './componnents/navbar';
 import AddUserPage from './pages/addUser.pages';
 import AllUsersPage from './pages/allUsers.pages';
 import SearchUser from './pages/search.page';
 import './App.css';
 
 function App() {
-	const [userBank, setUserBank] = useState('Nothing');
+	const [userBank, setUserBank] = useState([]);
 	useEffect(() => {
 		usersApi
 			.get('/all')
@@ -18,7 +18,7 @@ function App() {
 				// console.log(data);
 			})
 			.catch((e) => console.log(e));
-	}, []);
+	}, [userBank]);
 	return (
 		<div className='App'>
 			{/* <header className='App-header'>
@@ -28,8 +28,8 @@ function App() {
 					alt='logo'
 				/>
 			</header> */}
-			<h2>{userBank}</h2>
-			<Router>
+			{/* <h2>{userBank}</h2> */}
+			
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<SearchUser />} />
@@ -38,13 +38,12 @@ function App() {
 						path='/allusers'
 						element={<AllUsersPage />}
 					/>
-
 					<Route
 						path='/add'
 						element={<AddUserPage />}
 					/>
 				</Routes>
-			</Router>
+			
 		</div>
 	);
 }
