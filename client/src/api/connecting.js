@@ -5,6 +5,6 @@ if (process.env.NODE_ENV === 'production') {
     myURL = 'api';
 }
 
-export const Api = axios.create({
+export const usersApi = axios.create({
     baseURL: myURL,
 }) 
