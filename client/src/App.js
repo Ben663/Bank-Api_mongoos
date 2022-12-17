@@ -1,5 +1,3 @@
-/** @format */
-
 // import logo from './logo.svg';
 import { useState, useEffect } from 'react';
 import { usersApi } from './api/connecting';
@@ -14,13 +12,13 @@ function App() {
 	const [userBank, setUserBank] = useState([]);
 	useEffect(() => {
 		usersApi
-			.get('/all')
+			.get('/account')
 			.then(({ data }) => {
 				setUserBank(data);
-				console.log(userBank);
+				// console.log(userBank);
 			})
 			.catch((e) => console.log(e));
-	}, []);
+	}, [userBank]);
 	return (
 		<div className='App'>
 			{/* <header className='App-header'>
@@ -37,14 +35,21 @@ function App() {
 					path='/'
 					element={<SearchUser />}
 				/>
-				<Route path='/transfer' />
-				<Route
-					path='/allusers'
-					element={<AllUsersPage />}
-				/>
 				<Route
 					path='/add'
 					element={<AddUserPage />}
+				/>
+				<Route
+					path='/account'
+					element={<AllUsersPage />}
+				/>
+				{/* <Route
+					path='/Search'
+					element={<SearchUser />}
+				/> */}
+				<Route
+					path='/transfer'
+					element={<AllUsersPage />}
 				/>
 			</Routes>
 

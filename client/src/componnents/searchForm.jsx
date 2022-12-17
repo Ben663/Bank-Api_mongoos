@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export function SearchForm({ callback }) {
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState([]);
 
     const getHandler = (e) => {
         if (e.type === 'Keydown' && e.code !== 'Enter') return
@@ -15,9 +15,9 @@ export function SearchForm({ callback }) {
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
 						type='text'
-						onKeyDown={getHandler}
+						// onKeyDown={getHandler}
 					/>
-					<button onClick={getHandler}>Get User</button>
+					<button onChange={getHandler}>Get User Account</button>
 				</div>
 			</div>
 		);

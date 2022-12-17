@@ -12,11 +12,11 @@ export default function SearchUser() {
 	const getUser = async (id) => {
 		if (!id) return;
 		try {
-			const { user } = await getUserById(id);
+			const { data } = await getUserById(id);
 			setMessage('');
-			setUser(user);
+			setUser(data);
 		} catch (error) {
-			setUser(null);
+			setUser('');
 			console.error(error.response.data.error || 'Error');
 			setMessage(error.response.data.error || 'Error');
 		}

@@ -20,19 +20,23 @@ export default function Navbar() {
 				<Link
 					className='Link'
 					to='/'>
-					Search User
+					Home
 				</Link>
 				<Link
 					className='Link'
 					to='/add'>
-					Add User
+					Add Accounts
 				</Link>
 				<Link
 					className='Link'
-					to='/Transfer'>
-					Transfer
-            </Link>
-            <Link className="Link" to='all'>All Users</Link>
+					to='/account'>
+					All Users Account
+				</Link>
+				<Link
+					className='Link'
+					to='/transfer'>
+					Transfer && Deposit
+				</Link>
 			</NavbarStyled>
 		);
 };

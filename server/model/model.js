@@ -1,15 +1,14 @@
 import { Schema, model } from 'mongoose'
 const bankSchema = new Schema(
 	{
-		// remember to check it and update us
 		cash: {
-			type: [Number, 'please put here a number'],
+			type: Number,
 			default: 0,
 		},
 		credit: {
 			type: Number,
 			default: 0,
-			min: [0, 'Credit need to be positive'],
+			min: 0,
 		},
 		isActive: {
 			type: Boolean,
@@ -17,5 +16,9 @@ const bankSchema = new Schema(
 	},
 	{ timestamps: true }
 );
-export const bankUsers = model('user', bankSchema);
+export const bankAccounts = model('Account', bankSchema);
+
+
+
+// export { bankAccounts, bankUsers };
 

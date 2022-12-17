@@ -25,15 +25,15 @@ export default function AddUserPage() {
             >
 				<input
 					name='cash'
-					type={Number}
+					type='number'
 					placeholder='Cash $'
 				/>
 				<input
 					name='credit'
-					type={Number}
+					type='number'
 					placeholder='Credit $'
 				/>
-				<button onChange={addUserHandler}>Add User</button>
+				<button onChange={addUserHandler}>Add User To Account</button>
 			</form>
 		</PageStyled>
 	);

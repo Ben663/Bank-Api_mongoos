@@ -8,6 +8,7 @@ import {
 	TableBody,
 	TableHead,
 } from '@mui/material';
+import axios from 'axios';
 
 const TableStyled = styled(Table)`
 	&& {
@@ -15,24 +16,26 @@ const TableStyled = styled(Table)`
 	}
 `;
 export default function AllUsersPage() {
-	const [users, setAllUser] = useState([]);
+	const [user, setAllUser] = useState('');
 	const [message, setMessage] = useState('');
 
 	useEffect(() => {
 		const getAndSetAllUsers = async () => {
-			try {
-				const users = await getAllUsers();
-				setAllUser(users);
-			} catch (error) {
-				console.error(error.response.data.error || 'Error');
-				setMessage(error.response.data.error || 'Error');
-			}
+			const { data } = await axios.get(
+				`https://bankapi-e8gp.onrender.com/api/all/${getAllUsers.all[0]}`
+			);
+			setAllUser(data.cash);
+			setMessage('')
+
 		};
-		getAndSetAllUsers();
-	}, []);
+		if (AllUsersPage.all.length > 0) {
+			getAndSetAllUsers();
+			
+		}
+	}, [user]);
 
 	const TableRender = () => {
-		if (!users) return;
+		if (!user) return;
 		return (
 			<div>
 				<TableStyled>
@@ -44,7 +47,7 @@ export default function AllUsersPage() {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{users.map((user) => {
+						{user.map((user) => {
 							return (
 								<TableRow key={user._id}>
 									<TableCell>{user._id}</TableCell>

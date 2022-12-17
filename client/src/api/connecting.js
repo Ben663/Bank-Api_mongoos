@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-let myURL = 'http://localhost:5001/api';
+let myURL = 'https://bankapi-e8gp.onrender.com/api';
 if (process.env.NODE_ENV === 'production') {
-    myURL = 'api';
+    myURL = '/api';
 }
 
 export const usersApi = axios.create({
