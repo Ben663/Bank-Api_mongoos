@@ -15,7 +15,7 @@ const publicPath = path.join(__dirname, 'server', 'build');
 app.use(express.static(publicPath));
 app.use('/api', indexRouter);
 app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'server', 'build'));
+	res.sendFile(path.resolve(__dirname, 'server', 'build', index.html));
 });
 
 export { app };

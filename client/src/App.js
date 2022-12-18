@@ -1,5 +1,3 @@
-/** @format */
-
 // import logo from './logo.svg';
 import { useState, useEffect } from 'react';
 import { usersApi } from './api/connecting';
@@ -14,7 +12,7 @@ function App() {
 	const [userBank, setUserBank] = useState([]);
 	useEffect(() => {
 		usersApi
-			.get('/add')
+			.get('/')
 			.then(({ data }) => {
 				// console.log(data);
 				setUserBank(data.users);

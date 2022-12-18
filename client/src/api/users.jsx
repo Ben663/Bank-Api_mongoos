@@ -6,7 +6,7 @@ export const getUserById = async (id) => {
     // console.log(data);
 }
 export const getAllUsers = async () => {
-    const { data: { users } } = await usersApi.get('all');
+    const { data: { users } } = await usersApi.get('add');
     return users;
 }
 export const deleteUser = async (id) => {
@@ -14,6 +14,6 @@ export const deleteUser = async (id) => {
     return data;
 }
 export const addUser = async ({ cash, cretit } = {}) => {
-    const { data } = await usersApi.post('/add', { cash, cretit })
+    const { data } = await usersApi.post('/', { cash, cretit })
     return data
 }
