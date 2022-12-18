@@ -12,7 +12,7 @@ function App() {
 	const [userBank, setUserBank] = useState([]);
 	useEffect(() => {
 		usersApi
-			.get('/')
+			.get('/add')
 			.then(({ data }) => {
 				// console.log(data);
 				setUserBank(data.users);

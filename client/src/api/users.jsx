@@ -14,6 +14,6 @@ export const deleteUser = async (id) => {
     return data;
 }
 export const addUser = async ({ cash, cretit } = {}) => {
-    const { data } = await usersApi.post('/', { cash, cretit })
+    const { data } = await usersApi.post('/add', { cash, cretit })
     return data
 }

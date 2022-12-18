@@ -1,8 +1,7 @@
-/** @format */
-import { usersApi } from '../api/connecting';
+// import { addUser } from '../api/users';
 
 import React, { useState } from 'react';
-// import { addUser } from '../api/users';
+import { usersApi } from '../api/connecting';
 import { PageStyled } from './pagesStyled/style';
 
 export default function AddUserPage() {
@@ -24,6 +23,7 @@ export default function AddUserPage() {
 		await usersApi.post('/add', {
 			cash: cashInp,
 			credit: creditInp,
+			
 		});
 	};
 

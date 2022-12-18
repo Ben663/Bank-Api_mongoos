@@ -14,7 +14,7 @@ const bankSchema = new Schema(
 			type: Boolean,
 		},
 	},
-	{ timestamps: true }
+	// { timestamps: true }
 );
 export const bankAccounts = model('Account', bankSchema);
 

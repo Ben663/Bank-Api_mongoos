@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-let myURL = 'https://bankapi-e8gp.onrender.com/api/add';
+let myURL = 'https://bankapi-e8gp.onrender.com/api';
 if (process.env.NODE_ENV === 'production') {
     myURL = '/api';
 }
