@@ -10,7 +10,7 @@ import {
 } from '../controllers/controller.js';
 export const indexRouter = Router();
 
-indexRouter.get('/all', getUsers);
+indexRouter.get('/add', getUsers);
 indexRouter.get('/:id', getUser);
 
 indexRouter.post('/add', addUser);

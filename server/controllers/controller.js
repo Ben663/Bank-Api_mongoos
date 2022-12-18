@@ -7,7 +7,7 @@ export const getUsers = async (req, res) => {
 		const allBankUsers = await bankAccounts.find();
 		res.status(200).send({ users: allBankUsers });
 	} catch (error) {
-		res.status(404).send(err.message);
+		res.status(404).send(error.message);
 	}
 };
 export const addUser = async (req, res) => {

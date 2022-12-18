@@ -1,3 +1,5 @@
+/** @format */
+
 // import logo from './logo.svg';
 import { useState, useEffect } from 'react';
 import { usersApi } from './api/connecting';
@@ -12,9 +14,10 @@ function App() {
 	const [userBank, setUserBank] = useState([]);
 	useEffect(() => {
 		usersApi
-			.get('/account')
+			.get('/add')
 			.then(({ data }) => {
-				setUserBank(data);
+				// console.log(data);
+				setUserBank(data.users);
 				// console.log(userBank);
 			})
 			.catch((e) => console.log(e));
@@ -41,7 +44,7 @@ function App() {
 				/>
 				<Route
 					path='/account'
-					element={<AllUsersPage />}
+					element={<AllUsersPage userBank={userBank} />}
 				/>
 				{/* <Route
 					path='/Search'

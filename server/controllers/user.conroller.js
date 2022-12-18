@@ -1,8 +1,10 @@
+import{ getAllUsersFromMongoose} from '../config/mongoos.js'
 import { bankUsers } from '../model/model.js';
+
 
 export const addUser = async (req, res) => {
 	try {
-		const { name, age, lastName } = req.body;
+		const { name, lastName, age } = req.body;
 		const newUser = await bankUsers.create({ name, lastName, age });
 		return res.status(201).send(newUser);
 	} catch (error) {
